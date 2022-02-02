@@ -9,7 +9,7 @@ export const List = () => {
 
   return (
     <>
-      <button onClick={clearList} className='text-white'>Clear List</button>
+      <button onClick={clearList} className='text-white p-3'>Clear List</button>
       <ul>
         {todos.map((todo) => <ListItem key={todo.id} todo={todo} />)}
       </ul>

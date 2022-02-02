@@ -5,6 +5,6 @@ export const ListItem = ({ todo }) => {
   const { deleteTodo } = useContext(GlobalContext)
 
   return (
-    <li><span className='text-white'>{todo.todo}</span><button onClick={() => deleteTodo(todo.id)} className='text-red-600 p-1 ml-3'>x</button></li>
+    <li className='grid grid-cols-2'><span className='text-white'>{todo.todo}</span><button onClick={() => deleteTodo(todo.id)} className='text-red-600 p-1'>x</button></li>
   )
 };

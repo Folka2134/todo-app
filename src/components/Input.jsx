@@ -18,7 +18,7 @@ export const Input = () => {
 
   return (
     <form onSubmit={submit} className='flex'>
-      <input onChange={(e) => setText(e.currentTarget.value)} type="text" placeholder='new todo' />
+      <input onChange={(e) => setText(e.currentTarget.value)} type="text" placeholder='new todo' className='w-full' />
       <button className='bg-pink-200 p-3'>+</button>
     </form>
   )

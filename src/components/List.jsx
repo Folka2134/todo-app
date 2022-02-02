@@ -9,7 +9,7 @@ export const List = () => {
 
   return (
     <>
-      <ul className='w-full'>
+      <ul>
         {todos.map((todo) => <ListItem key={todo.id} todo={todo} />)}
       </ul>
     </>

@@ -26,6 +26,7 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         todos: state.todos,
+        deleteTodo
       }}
     >
       {children}

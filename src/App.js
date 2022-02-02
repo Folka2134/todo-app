@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className='grid h-screen content-center'>
+    <div className='bg-[url("./images/blob-background.svg")] bg-cover grid h-screen content-center'>
       <div className='grid justify-center'>
         <Input />
         <List />

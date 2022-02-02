@@ -15,6 +15,12 @@ export const GlobalContext = createContext(initialState)
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
+  function addTodo(note) {
+    dispatch({
+      type: 'ADD_TODO',
+      payload: note
+    })
+  }
   function deleteTodo(id) {
     dispatch({
       type: 'DELETE_TODO',

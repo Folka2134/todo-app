@@ -5,9 +5,11 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-      <Input />
-      <List />
+    <div className='grid h-screen content-center'>
+      <div className='grid justify-center'>
+        <Input />
+        <List />
+      </div>
     </div>
   );
 }

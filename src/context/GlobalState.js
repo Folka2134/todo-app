@@ -1,5 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 
+import AppReducer from './AppReducer';
+
 const initialState = {
   todos: [
     {id: 1, todo: 'First'},
@@ -14,8 +16,12 @@ export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
   return (
-    <GlobalContext>
+    <GlobalContext.Provider
+      value={{
+        todos: state.todos
+      }}
+    >
       {children}
-    </GlobalContext>
+    </GlobalContext.Provider>
   )
 };

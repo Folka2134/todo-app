@@ -27,6 +27,12 @@ export const GlobalProvider = ({ children }) => {
       payload: id
     })
   }
+  function clearList() {
+    dispatch({
+      type: 'CLEAR_LIST',
+      payload: null
+    })
+  }
 
   return (
     <GlobalContext.Provider

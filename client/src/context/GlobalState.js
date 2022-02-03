@@ -1,15 +1,34 @@
 import React, { createContext, useReducer } from 'react';
+import axios from 'axios'
 
 import AppReducer from './AppReducer';
 
 const initialState = {
-  todos: []
+  todos: [],
+  error: null,
+  loading: true
 }
 
 export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
+
+  async function getTransactions() {
+    try {
+      const res = await axios.get('/')
+
+      dispatch({
+        type: 'GET_TODO',
+        payload: res.data.data
+      })
+    } catch (err) {
+      dispatch({
+        type: 'TODO_ERROR',
+        payload: err.response.data.error
+      })
+    }
+  }
 
   function addTodo(note) {
     dispatch({

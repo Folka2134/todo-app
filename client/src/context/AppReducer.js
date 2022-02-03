@@ -15,7 +15,7 @@ export default (state, action) => {
     case 'DELETE_TODO':
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id !== action.payload)
+        todos: state.todos.filter((todo) => todo._id !== action.payload)
       }
     case 'CLEAR_LIST':
       return {

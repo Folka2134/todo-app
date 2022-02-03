@@ -9,13 +9,14 @@ export const List = () => {
 
   useEffect(() => {
     getTransactions()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
     <>
       <button onClick={clearList} className='text-white p-3'>Clear List</button>
       <ul>
-        {todos.map((todo) => <ListItem key={todo.id} todo={todo} />)}
+        {todos.map((todo) => <ListItem key={todo._id} todo={todo} />)}
       </ul>
     </>
   )

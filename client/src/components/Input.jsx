@@ -9,7 +9,7 @@ export const Input = () => {
     e.preventDefault()
 
     const newTodo = {
-      id: Math.floor(Math.random() * 10000),
+      _id: Math.floor(Math.random() * 10000),
       todo: text
     }
 

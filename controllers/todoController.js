@@ -28,18 +28,18 @@ exports.addTodo = async (req, res, next) => {
       data: newTodo
     })
   } catch (err) {
-    if (err.name === 'ValidateionError') {
-      const messages = Object.values(err.errors.map((val) => val.message))
-      return res.status(400).json({
-        success: false,
-        error: messages
-      })
-    } else {
+    // if (err.name === 'ValidateionError') {
+    //   const messages = Object.values(err.errors.map((val) => val.message))
+    //   return res.status(400).json({
+    //     success: false,
+    //     error: messages
+    //   })
+    // } else {
       return res.status(500).json({
         success: false,
         error: 'Server Error'
       })
-    }
+    
   }
 }
 //@desc DELETE Delete Todo

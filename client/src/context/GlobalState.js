@@ -17,7 +17,6 @@ export const GlobalProvider = ({ children }) => {
   async function getTransactions() {
     try {
       const res = await axios.get('/todos')
-      console.log(res.data);
       dispatch({
         type: 'GET_TODOS',
         payload: res.data.data
@@ -30,17 +29,29 @@ export const GlobalProvider = ({ children }) => {
     }
   }
 
-  function addTodo(note) {
-    dispatch({
-      type: 'ADD_TODO',
-      payload: note
-    })
+  async function addTodo(note) {
+
+      dispatch({
+        type: 'ADD_TODO',
+        payload: note
+      })
   }
-  function deleteTodo(id) {
-    dispatch({
-      type: 'DELETE_TODO',
-      payload: id
-    })
+
+  async function deleteTodo(id) {
+    try {
+      await axios.delete(`/todos/${id}`)
+      dispatch({
+        type: 'DELETE_TODO',
+        payload: id
+      })
+    } catch (err) {
+      dispatch({
+        type: 'TODO_ERROR',
+        payload: err.response.data.error
+      })
+    }
+
+
   }
   function clearList() {
     dispatch({

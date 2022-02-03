@@ -7,7 +7,7 @@ router.route('/todos')
   .get(getTodos)
   .post(addTodo)
 
-router.route('todos/:id')
+router.route('/todos/:id')
   .delete(deleteTodo)
 
 module.exports = router

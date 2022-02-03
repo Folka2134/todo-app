@@ -1,11 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 import { ListItem } from './ListItem';
 
 
 export const List = () => {
-  const { todos, clearList } = useContext(GlobalContext)
+  const { todos, clearList, getTransactions } = useContext(GlobalContext)
+
+  useEffect(() => {
+    getTransactions()
+  }, [])
 
   return (
     <>

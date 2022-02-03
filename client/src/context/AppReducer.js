@@ -1,16 +1,11 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default (state, action) => {
   switch(action.type) {
-    case 'GET_TODO':
+    case 'GET_TODOS':
       return {
         ...state,
         loading: false,
         todos: action.payload
-      }
-    case 'TODO_ERROR':
-      return {
-        ...state,
-        error: action.payload
       }
     case 'ADD_TODO':
       return {
@@ -26,6 +21,11 @@ export default (state, action) => {
       return {
         todos: []
       }
+    case 'TODO_ERROR':
+      return {
+        ...state,
+        error: action
+      }  
     default:
       return state
   }

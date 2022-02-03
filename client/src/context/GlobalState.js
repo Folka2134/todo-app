@@ -16,10 +16,10 @@ export const GlobalProvider = ({ children }) => {
 
   async function getTransactions() {
     try {
-      const res = await axios.get('/')
-
+      const res = await axios.get('/todos')
+      console.log(res.data);
       dispatch({
-        type: 'GET_TODO',
+        type: 'GET_TODOS',
         payload: res.data.data
       })
     } catch (err) {
@@ -53,9 +53,12 @@ export const GlobalProvider = ({ children }) => {
     <GlobalContext.Provider
       value={{
         todos: state.todos,
+        getTransactions,
+        error: state.error,
+        loading: state.loading,
         addTodo,
         deleteTodo,
-        clearList
+        clearList,
       }}
     >
       {children}

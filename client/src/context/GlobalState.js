@@ -30,7 +30,6 @@ export const GlobalProvider = ({ children }) => {
   }
 
   async function addTodo(note) {
-
       dispatch({
         type: 'ADD_TODO',
         payload: note
@@ -50,7 +49,6 @@ export const GlobalProvider = ({ children }) => {
         payload: err.response.data.error
       })
     }
-
 
   }
   function clearList() {

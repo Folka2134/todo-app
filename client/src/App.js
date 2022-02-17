@@ -1,11 +1,19 @@
-import { Input } from "./components/Input";
-import { List } from "./components/List";
+import { Input } from './components/Input';
+import { List } from './components/List';
 
-const App = () => {
+import { GlobalProvider } from './context/GlobalState';
+
+import './App.css';
+
+function App() {
   return (
-    <div className="bg-blue-600 h-screen w-screen grid justify-center content-center">
-      <Input />
-      <List />
+    <div className='bg-[url("./images/blob-background.svg")] bg-cover grid h-screen content-center'>
+      <div className='grid justify-center'>
+        <GlobalProvider>
+          <Input />
+          <List />
+        </GlobalProvider>
+      </div>
     </div>
   );
 }

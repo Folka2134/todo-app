@@ -1,11 +1,23 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
-import { ListItem } from './ListItem'
+import { ListItem } from './ListItem';
+
 
 export const List = () => {
+  const { todos, clearList, getTransactions } = useContext(GlobalContext)
+
+  useEffect(() => {
+    getTransactions()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
-    <ul>
-      <ListItem />
-    </ul>
+    <>
+      <button onClick={clearList} className='text-white p-3'>Clear List</button>
+      <ul>
+        {todos.map((todo) => <ListItem key={todo._id} todo={todo} />)}
+      </ul>
+    </>
   )
-}
+};

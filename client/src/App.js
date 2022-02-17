@@ -12,6 +12,7 @@ function App() {
         <GlobalProvider>
           <Input />
           <List />
+          <p>test</p>
         </GlobalProvider>
       </div>
     </div>

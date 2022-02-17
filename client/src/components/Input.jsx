@@ -1,25 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React from 'react'
 
 export const Input = () => {
-  const [text, setText] = useState('')
-  const { addTodo } = useContext(GlobalContext)
-
-  const submit = (e) => {
-    e.preventDefault()
-
-    const newTodo = {
-      _id: Math.floor(Math.random() * 10000),
-      todo: text
-    }
-
-    addTodo(newTodo)
-  }
-
   return (
-    <form onSubmit={submit} className='flex'>
-      <input onChange={(e) => setText(e.currentTarget.value)} type="text" placeholder='new todo' className='w-full' />
-      <button className='bg-pink-200 p-3'>+</button>
-    </form>
+    <div className='bg-pink-500 shadow-sm w-52'>
+      <input placeholder='new note'></input>
+      <button>+</button>
+    </div>
   )
-};
+}

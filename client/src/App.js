@@ -1,7 +1,9 @@
-function App() {
+
+
+const App = () => {
   return (
-    <div>
-      new
+    <div className="bg-blue-600">
+
     </div>
   );
 }
